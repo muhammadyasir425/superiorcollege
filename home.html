@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Superior Group of Colleges</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green-dark:#0a4b2e;
+    --green:#0d5c3a;
+    --green-mid:#146643;
+    --green-light:#1f7a4d;
+    --green-pale:#eaf6ee;
+    --ink:#173a26;
+    --ink-soft:#3d5949;
+    --white:#ffffff;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--green-pale);
+    line-height:1.6;
+  }
+
+  h1{font-family:'Playfair Display',serif;}
+  a{text-decoration:none;}
+
+  /* Navbar */
+  .navbar{
+    background:var(--green);
+    border-bottom:4px solid var(--green-dark);
+  }
+
+  .navbar__inner{
+    max-width:1100px;
+    margin:0 auto;
+    padding:16px 24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+
+  .navbar__brand{
+    color:var(--white);
+    font-family:'Playfair Display',serif;
+    font-weight:700;
+    font-size:1.15rem;
+  }
+
+  .navbar__links{
+    display:flex;
+    gap:28px;
+  }
+
+  .navbar__links a{
+    color:var(--white);
+    font-weight:500;
+    font-size:0.98rem;
+    padding:8px 4px;
+    border-bottom:2px solid transparent;
+    transition:border-color .2s ease, color .2s ease;
+  }
+
+  .navbar__links a:hover{
+    border-color:var(--green-light);
+    color:#d7f2df;
+  }
+
+  /* Intro */
+  .intro{
+    max-width:700px;
+    margin:0 auto;
+    padding:60px 24px 40px;
+    text-align:center;
+  }
+
+  .intro__logo{
+    width:150px;
+    height:150px;
+    object-fit:contain;
+    margin-bottom:20px;
+    filter:drop-shadow(0 10px 22px rgba(10,75,46,0.25));
+  }
+
+  .intro h1{
+    color:var(--green-dark);
+    font-size:2.2rem;
+    font-weight:800;
+    margin-bottom:14px;
+  }
+
+  .intro__text{
+    color:var(--ink-soft);
+    font-size:1.05rem;
+  }
+
+  /* Building image */
+  .building{
+    max-width:1100px;
+    margin:0 auto;
+    padding:20px 24px 60px;
+  }
+
+  .building svg{
+    width:100%;
+    display:block;
+    border-radius:14px;
+    box-shadow:0 14px 34px rgba(10,75,46,0.2);
+  }
+
+  /* Footer */
+  .footer{
+    background:var(--green-dark);
+    color:var(--white);
+    text-align:center;
+    padding:20px;
+    font-size:0.9rem;
+  }
+
+  @media (max-width:600px){
+    .navbar__inner{flex-direction:column;align-items:flex-start;}
+    .navbar__links{gap:18px;}
+    .intro__logo{width:110px;height:110px;}
+    .intro h1{font-size:1.7rem;}
+  }
+</style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="navbar__inner">
+      <span class="navbar__brand">Superior Group of Colleges</span>
+      <nav class="navbar__links">
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="fee structure.html">Fee Structure</a>
+          <!-- <a href="fee-structure.html">Fee Structure</a> -->
+      </nav>
+            <!-- <nav class="navbar__links">
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+       
+      </nav> -->
+    </div>
+  </header>
+
+  <main>
+    <section class="intro">
+      <img src="logo2.png" alt="Superior Group of Colleges logo" class="intro__logo">
+      <h1>Superior Group of College</h1>
+      <p class="intro__text">Building bright futures through quality education and discipline.</p>
+    </section>
+
+    <section class="building">
+      <svg viewBox="0 0 1200 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="College building illustration">
+        <rect width="1200" height="420" fill="#eaf6ee"/>
+        <rect y="330" width="1200" height="90" fill="#bfe3cc"/>
+        <circle cx="1080" cy="70" r="46" fill="#dff0c8"/>
+        <rect x="260" y="150" width="680" height="200" fill="#0d5c3a"/>
+        <rect x="260" y="150" width="680" height="18" fill="#0a4b2e"/>
+        <polygon points="230,150 970,150 600,70" fill="#0a4b2e"/>
+        <rect x="565" y="40" width="70" height="35" fill="#1f7a4d"/>
+        <polygon points="565,40 635,40 600,10" fill="#1f7a4d"/>
+        <g fill="#f5f7f0">
+          <rect x="300" y="180" width="26" height="170"/>
+          <rect x="370" y="180" width="26" height="170"/>
+          <rect x="440" y="180" width="26" height="170"/>
+          <rect x="510" y="180" width="26" height="170"/>
+          <rect x="580" y="180" width="26" height="170"/>
+          <rect x="650" y="180" width="26" height="170"/>
+          <rect x="720" y="180" width="26" height="170"/>
+          <rect x="790" y="180" width="26" height="170"/>
+          <rect x="860" y="180" width="26" height="170"/>
+        </g>
+        <rect x="540" y="330" width="120" height="10" fill="#e8f2e6"/>
+        <rect x="530" y="340" width="140" height="10" fill="#e8f2e6"/>
+        <rect x="520" y="350" width="160" height="10" fill="#e8f2e6"/>
+        <rect x="120" y="230" width="140" height="120" fill="#146643"/>
+        <rect x="940" y="230" width="140" height="120" fill="#146643"/>
+        <rect x="598" y="0" width="4" height="45" fill="#3a3a3a"/>
+        <polygon points="602,4 640,14 602,24" fill="#1f7a4d"/>
+        <circle cx="170" cy="330" r="26" fill="#2f9e5e"/>
+        <rect x="164" y="330" width="12" height="24" fill="#5c4127"/>
+        <circle cx="1040" cy="330" r="26" fill="#2f9e5e"/>
+        <rect x="1034" y="330" width="12" height="24" fill="#5c4127"/>
+      </svg>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Superior Group of Colleges. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

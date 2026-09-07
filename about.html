@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — Superior Group of Colleges</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  :root{
+    --green-dark:#0a4b2e;
+    --green:#0d5c3a;
+    --green-mid:#146643;
+    --green-light:#1f7a4d;
+    --green-pale:#eaf6ee;
+    --gold:#c9a227;
+    --ink:#173a26;
+    --ink-soft:#3d5949;
+    --white:#ffffff;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--green-pale);
+    line-height:1.65;
+  }
+
+  h1,h2,h3{font-family:'Playfair Display',serif;}
+  a{text-decoration:none;color:inherit;}
+
+  /* Navbar */
+  .navbar{
+    background:var(--green);
+    border-bottom:4px solid var(--green-dark);
+  }
+
+  .navbar__inner{
+    max-width:1100px;
+    margin:0 auto;
+    padding:16px 24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+
+  .navbar__brand{
+    color:var(--white);
+    font-family:'Playfair Display',serif;
+    font-weight:700;
+    font-size:1.15rem;
+  }
+
+  .navbar__links{
+    display:flex;
+    gap:28px;
+  }
+
+  .navbar__links a{
+    color:var(--white);
+    font-weight:500;
+    font-size:0.98rem;
+    padding:8px 4px;
+    border-bottom:2px solid transparent;
+    transition:border-color .2s ease, color .2s ease;
+  }
+
+  .navbar__links a:hover, .navbar__links a.active{
+    border-color:var(--gold);
+    color:#d7f2df;
+  }
+
+  /* Page hero */
+  .page-hero{
+    background:linear-gradient(135deg,var(--green-dark),var(--green-mid));
+    color:var(--white);
+    text-align:center;
+    padding:60px 24px;
+  }
+
+  .page-hero h1{
+    font-size:2.1rem;
+    margin-bottom:10px;
+  }
+
+  .page-hero p{
+    color:#d7f2df;
+  }
+
+  /* Content */
+  .content{
+    max-width:1100px;
+    margin:0 auto;
+    padding:56px 24px;
+    display:grid;
+    grid-template-columns:1.6fr 1fr;
+    gap:44px;
+    align-items:start;
+  }
+
+  .content__text h2{
+    color:var(--green-dark);
+    font-size:1.35rem;
+    margin:22px 0 10px;
+  }
+
+  .content__text h2:first-child{margin-top:0;}
+
+  .content__text p{
+    color:var(--ink-soft);
+  }
+
+  .check-list{
+    list-style:none;
+    margin-top:8px;
+  }
+
+  .check-list li{
+    color:var(--ink-soft);
+    padding:8px 0 8px 28px;
+    position:relative;
+    border-bottom:1px solid #d9ecdf;
+    border-bottom-color:#d9ecdf;  }
+
+
+  .check-list li::before{
+    content:"\2713";
+    position:absolute;
+    left:0;
+    color:var(--gold);
+    font-weight:700;
+  }
+
+  /* Social card */
+  .social-card{
+    background:var(--white);
+    border:1px solid #d9ecdf;
+    border-radius:14px;
+    padding:30px 24px;
+    text-align:center;
+    box-shadow:0 14px 30px rgba(10,75,46,0.12);
+  }
+
+  .social-card img{
+    width:90px;
+    height:90px;
+    object-fit:contain;
+    margin-bottom:14px;
+  }
+
+  .social-card h3{
+    color:var(--green-dark);
+    margin-bottom:4px;
+  }
+
+  .social-card p{
+    color:var(--ink-soft);
+    font-size:0.9rem;
+    margin-bottom:22px;
+  }
+
+  .social-list{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+
+  .social-item{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:12px 16px;
+    border-radius:10px;
+    color:var(--white);
+    transition:transform .15s ease, opacity .2s ease;
+  }
+
+  .social-item:hover{
+    transform:translateY(-2px);
+    opacity:0.92;
+  }
+
+  .social-item i{
+    font-size:1.4rem;
+    width:30px;
+    text-align:center;
+  }
+
+  .social-item__text{
+    display:flex;
+    flex-direction:column;
+    text-align:left;
+  }
+
+  .social-item__name{
+    font-weight:700;
+    font-size:0.95rem;
+  }
+
+  .social-item__handle{
+    font-size:0.78rem;
+    opacity:0.9;
+  }
+
+  .social-item--tiktok{background:#010101;}
+  .social-item--insta{background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4);}
+  .social-item--fb{background:#1877f2;}
+
+  /* Footer */
+  .footer{
+    background:var(--green-dark);
+    color:var(--white);
+    text-align:center;
+    padding:20px;
+    font-size:0.9rem;
+  }
+
+  @media (max-width:760px){
+    .content{grid-template-columns:1fr;}
+    .navbar__inner{flex-direction:column;align-items:flex-start;}
+    .navbar__links{gap:16px;}
+  }
+</style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="navbar__inner">
+      <span class="navbar__brand">Superior Group of Colleges</span>
+      <nav class="navbar__links">
+        <a href="home.html">Home</a>
+        <a href="about.html" class="active">About Us</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="fee structure.html">Fee Structure</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <h1>About Superior Group of Colleges</h1>
+    <p>A legacy of academic excellence built on discipline, character and knowledge.</p>
+  </section>
+
+  <main class="content">
+    <div class="content__text">
+      <h2>Who We Are</h2>
+      <p>Superior Group of Colleges has been a leading name in education, committed to nurturing young minds and preparing them for a successful future. We believe every student carries the potential for greatness, and our role is to guide that potential with quality teaching, strong values and a supportive environment.</p>
+
+      <h2>Our Mission</h2>
+      <p>To deliver high-standard education that builds not just successful careers but responsible citizens — combining strong academics with discipline, confidence and moral character.</p>
+
+      <h2>Why Choose Us</h2>
+      <ul class="check-list">
+        <li>Experienced and qualified faculty</li>
+        <li>Well-equipped classrooms and labs</li>
+        <li>Focus on discipline and character building</li>
+        <li>Strong track record of academic results</li>
+        <li>Supportive and safe campus environment</li>
+      </ul>
+    </div>
+
+    <div class="social-card">
+      <img src="logo2.png" alt="Superior Group of Colleges logo">
+      <h3>Follow Us</h3>
+      <p>Stay connected with Superior Group of Colleges</p>
+
+      <div class="social-list">
+        <a href="https://www.tiktok.com/@edu.superiorcollege" target="_blank" rel="noopener" class="social-item social-item--tiktok">
+          <i class="fa-brands fa-tiktok"></i>
+          <span class="social-item__text">
+            <span class="social-item__name">TikTok</span>
+            <span class="social-item__handle">www.edu.superiorcollege.tiktok</span>
+          </span>
+        </a>
+
+        <a href="https://www.instagram.com/edu.superiorcollege" target="_blank" rel="noopener" class="social-item social-item--insta">
+          <i class="fa-brands fa-instagram"></i>
+          <span class="social-item__text">
+            <span class="social-item__name">Instagram</span>
+            <span class="social-item__handle">www.edu.superiorcollege.insta</span>
+          </span>
+        </a>
+
+        <a href="https://www.facebook.com/edu.superiorcollege" target="_blank" rel="noopener" class="social-item social-item--fb">
+          <i class="fa-brands fa-facebook"></i>
+          <span class="social-item__text">
+            <span class="social-item__name">Facebook</span>
+            <span class="social-item__handle">www.edu.superiorcollege.facebook</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Superior Group of Colleges. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

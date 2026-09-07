@@ -1,0 +1,325 @@
+
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fee Structure — Superior Group of Colleges</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  :root{
+    --green-dark:#0a4b2e;
+    --green:#0d5c3a;
+    --green-mid:#146643;
+    --green-pale:#eaf6ee;
+    --gold:#c9a227;
+    --gold-pale:#f3ecd6;
+    --ink:#173a26;
+    --ink-soft:#3d5949;
+    --white:#ffffff;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--green-pale);
+    line-height:1.65;
+  }
+
+  h1,h2{font-family:'Playfair Display',serif;}
+  a{text-decoration:none;color:inherit;}
+
+  /* Navbar */
+  .navbar{
+    background:var(--green);
+    border-bottom:4px solid var(--green-dark);
+  }
+
+  .navbar__inner{
+    max-width:1100px;
+    margin:0 auto;
+    padding:16px 24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+
+  .navbar__brand{
+    color:var(--white);
+    font-family:'Playfair Display',serif;
+    font-weight:700;
+    font-size:1.15rem;
+  }
+
+  .navbar__links{
+    display:flex;
+    gap:28px;
+  }
+
+  .navbar__links a{
+    color:var(--white);
+    font-weight:500;
+    font-size:0.98rem;
+    padding:8px 4px;
+    border-bottom:2px solid transparent;
+    transition:border-color .2s ease, color .2s ease;
+  }
+
+  .navbar__links a:hover, .navbar__links a.active{
+    border-color:var(--gold);
+    color:#d7f2df;
+  }
+
+  /* Page hero */
+  .page-hero{
+    background:linear-gradient(135deg,var(--green-dark),var(--green-mid));
+    color:var(--white);
+    text-align:center;
+    padding:60px 24px;
+  }
+
+  .page-hero h1{
+    font-size:2.1rem;
+    margin-bottom:10px;
+  }
+
+  .page-hero p{
+    color:#d7f2df;
+  }
+
+  /* Content */
+  .content{
+    max-width:1000px;
+    margin:0 auto;
+    padding:56px 24px;
+  }
+
+  .fee-cards{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+    margin-bottom:32px;
+  }
+
+  .fee-card{
+    background:var(--white);
+    border:1px solid #d9ecdf;
+    border-radius:14px;
+    padding:30px 26px;
+    box-shadow:0 12px 26px rgba(10,75,46,0.1);
+    text-align:center;
+  }
+
+  .fee-card h2{
+    color:var(--green-dark);
+    font-size:1.3rem;
+    margin-bottom:10px;
+  }
+
+  .fee-card .amount{
+    font-family:'Playfair Display',serif;
+    font-size:2.1rem;
+    font-weight:800;
+    color:var(--gold);
+    margin-bottom:6px;
+  }
+
+  .fee-card .amount span{
+    font-size:1rem;
+    font-weight:600;
+    color:var(--ink-soft);
+  }
+
+  .fee-card p{
+    color:var(--ink-soft);
+    font-size:0.9rem;
+  }
+
+  .fee-total{
+    background:var(--green-dark);
+    color:var(--white);
+    border-radius:14px;
+    padding:28px 26px;
+    text-align:center;
+    margin-bottom:52px;
+  }
+
+  .fee-total h2{
+    font-size:1.2rem;
+    margin-bottom:8px;
+    color:var(--white);
+  }
+
+  .fee-total .amount{
+    font-family:'Playfair Display',serif;
+    font-size:2.3rem;
+    font-weight:800;
+    color:var(--gold);
+  }
+
+  .fee-total p{
+    color:#d7f2df;
+    font-size:0.9rem;
+    margin-top:6px;
+  }
+
+  /* Scholarship */
+  .scholarship{
+    display:flex;
+    gap:24px;
+    background:var(--white);
+    border:1px solid #d9ecdf;
+    border-radius:14px;
+    padding:34px;
+    box-shadow:0 14px 30px rgba(10,75,46,0.12);
+  }
+
+  .scholarship__icon{
+    flex-shrink:0;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:var(--gold-pale);
+    color:var(--gold);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.6rem;
+  }
+
+  .scholarship h2{
+    color:var(--green-dark);
+    font-size:1.4rem;
+    margin-bottom:12px;
+  }
+
+  .scholarship-list{
+    list-style:none;
+  }
+
+  .scholarship-list li{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 0;
+    border-bottom:1px solid #e8f2ec;
+    color:var(--ink-soft);
+  }
+
+  .scholarship-list li:last-child{border-bottom:none;}
+
+  .scholarship-list .badge{
+    background:var(--gold-pale);
+    color:var(--green-dark);
+    font-weight:700;
+    font-size:0.85rem;
+    padding:5px 14px;
+    border-radius:999px;
+    white-space:nowrap;
+  }
+
+  .scholarship__note{
+    margin-top:14px;
+    font-size:0.88rem;
+    font-style:italic;
+    color:var(--ink-soft);
+  }
+
+  .scholarship__note a{
+    color:var(--green-dark);
+    font-weight:600;
+    font-style:normal;
+  }
+
+  /* Footer */
+  .footer{
+    background:var(--green-dark);
+    color:var(--white);
+    text-align:center;
+    padding:20px;
+    font-size:0.9rem;
+  }
+
+  @media (max-width:760px){
+    .fee-cards{grid-template-columns:1fr;}
+    .scholarship{flex-direction:column;}
+    .navbar__inner{flex-direction:column;align-items:flex-start;}
+    .navbar__links{gap:16px;}
+  }
+</style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="navbar__inner">
+      <span class="navbar__brand">Superior Group of Colleges</span>
+      <nav class="navbar__links">
+        <a href="home.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="fee-structure.html" class="active">Fee Structure</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <h1>Fee Structure</h1>
+    <p>Simple and transparent yearly fee packages for our Intermediate programs.</p>
+  </section>
+
+  <main class="content">
+
+    <div class="fee-cards">
+      <div class="fee-card">
+        <h2>1st Year</h2>
+        <div class="amount">150,000 <span>PKR / year</span></div>
+        <p>Complete yearly package including tuition, lab and annual charges.</p>
+      </div>
+      <div class="fee-card">
+        <h2>2nd Year</h2>
+        <div class="amount">150,000 <span>PKR / year</span></div>
+        <p>Complete yearly package including tuition, lab and annual charges.</p>
+      </div>
+    </div>
+
+    <div class="fee-total">
+      <h2>Total for 2 Years</h2>
+      <div class="amount">300,000 PKR</div>
+      <p>1st Year + 2nd Year combined package</p>
+    </div>
+
+    <div class="scholarship">
+      <div class="scholarship__icon">
+        <i class="fa-solid fa-award"></i>
+      </div>
+      <div>
+        <h2>Scholarships</h2>
+        <ul class="scholarship-list">
+          <li>
+            <span>Sibling Scholarship — for the second child in the same family</span>
+            <span class="badge">50% Off</span>
+          </li>
+          <li>
+            <span>Merit Scholarship — students scoring 1050+ marks in Matriculation</span>
+            <span class="badge">50% Off</span>
+            </li>
+        </ul>
+        <p class="scholarship__note">Interested students can apply for a scholarship through the admission office along with supporting documents. For details, please <a href="contact.html">contact us</a>.</p>
+      </div>
+         
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Superior Group of Colleges. All rights reserved.</p>
+  </footer>
+
+</body>
+</html> 
